@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Tahoma, sans-serif;
+  background-color: #f2f9ff;
+}
+:root {
+  --main-color: #e31b5e;
+  --main-transition: .5s
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000
+}
+h1,h2,h3 {
+  margin: 0
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem;
+  width: 80%;
+  position:relative
+}
+@media(max-width: 750px) {
+  header {
+    justify-content: center;
+  }
+}
+@media(max-width: 1200px) {
+  header {
+    width:94%
+  }
+}
+header .logo {
+  color: rgb(88, 88, 88);
+  grid-column: 1;
+}
+@media(max-width: 750px){
+  header .logo {
+    margin-bottom: 1rem
+  }
+}
+header .logo span {
+  color: var(--main-color)
+}
+form {
+  position: relative;
+  grid-column: 8;
+}
+header input {
+  width: 350px;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  text-align: right;
+  grid-column: 5;
+}
+header input:focus {
+  outline: none;
+}
+form .search {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+form .search:focus {
+  outline: none;
+}
+.location {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main-color);
+  font-size: 1.2rem;
+}
+aside {
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-width: 200px;
+  width: 11%;
+  z-index: 1;
+}
+@media(max-width: 600px) {
+  aside {
+    display: none;
+  }
+}
+@media(max-width: 750px) {
+  aside {
+    min-width: 145px;
+    width: 11%;
+  }
+}
+@media(max-width: 1200px) {
+  aside {
+    left:0;
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+  }
+}
+
+aside ul {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+@media(max-width: 1200px) {
+  aside ul {
+    flex-direction: row;
+    width: unset
+  }
+}
+aside ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 150px;
+  padding: 2.2rem 1rem;
+  margin-bottom: 1.5rem;
+  margin-right: 10px;
+  border-radius: 20px;
+  transition: 0.5s ease-in-out
+}
+@media(max-width: 1200px) {
+  aside ul li{
+    padding: 0 1rem
+  }
+}
+@media(max-width: 750px) {
+  aside ul li {
+    padding: 0
+  }
+}
+aside ul i {
+  color: #888;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+}
+@media(max-width: 750px) {
+  aside ul i {
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
+}
+aside a{
+  font-size: 1.2rem;
+  color: #888;
+  transition: 0.5s ease-in-out;
+  font-weight: bold;
+}
+@media(max-width: 750px) {
+  aside a{
+    font-size: 1rem;
+  }
+}
+aside ul li.active i,
+aside ul li.active a,
+aside ul li:hover a,
+aside ul li:hover i {
+  color: var(--main-color);
+}
+aside ul li:hover,
+aside ul li.active  {
+  background-color: #f7f1ed;
+}
+
+.content {
+  background-image: url(../img/keutamaanamalandibulanramadhan-905x613.jpg);
+  background-size: cover;
+  height: calc(100vh - 200px);
+  margin: 1rem;
+  width: 85%;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+@media(max-width: 1200px) {
+  .content {
+    width: calc(100% - 2rem)
+  }
+}
+.content::before {
+  content: "";
+  background-image: url(../img/imgbin_ramadan-islam-eid-al-fitr-mosque-png.png);
+  background-size: cover;
+  width: 290px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .1;
+  animation: up-down 3s linear infinite;
+}
+.content .time {
+  position: absolute;
+  right: 3rem;
+  top: 2.5rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff14;
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  transition: .3s;
+}
+@media(max-width: 1200px) {
+  .content .time {
+    left: 0;
+    top: 0;
+    width: 100%
+  }
+}
+.content .time:hover {
+  background-color: #ffffff4d;
+}
+.content .time span {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+.content .time i {
+  margin-right: 2rem;
+  font-size: 2rem;
+}
+.content .histore {
+  display: flex;
+  justify-content: space-evenly;
+}
+.content .histore li {
+  width: 5rem;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+.content .info-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: #d8d8d8;
+  width: 100%;
+}
+@media(max-width: 750px) {
+  .content .info-text {
+    top: 31%;
+  }
+}
+.content .info-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+@media(max-width: 750px) {
+  .content .info-text h2{
+    font-size: 1.3rem;
+    color: rgb(73, 73, 73)
+  }
+}
+.content .info-text h3 {
+  font-size: 1.3rem;
+}
+@media(max-width: 750px) {
+  .content .info-text h3 {
+    display: none
+  }
+}
+.content .info-text h3 span {
+  color: var(--main-color)
+}
+.content .info-text p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+@media(max-width: 750px) {
+  .content .info-text p {
+    display: none
+  }
+}
+.content .info-text i {
+  margin-right: 1rem ;
+  border: 3px solid var(--main-color);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.content .info-text i:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.pray-container {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  color: #656565;
+}
+.pray-container .slaa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1bd;
+  padding: 0.5rem 2rem;  text-align: center;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: var(--main-transition)
+}
+.pray-container .active {
+  transform: scale(1.1, 1.1);
+  border: 2px solid var(--main-color)
+}
+@media(max-width: 1000px) {
+  .pray-container .active {
+    transform: unset;
+  }
+}
+.pray-container .slaa h3 {
+  font-weight: bold;
+  margin-bottom: 13px;
+  font-size: 1.3rem;
+}
+.pray-container .slaa p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: var(--main-transition);
+  margin: 0;
+  padding-bottom: 5px;
+}
+.pray-container .active p,
+.pray-container .slaa:hover span {
+  color: var(--main-color);
+}
+.pray-container .slaa span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: var(--main-transition)
+}
+.pray-container .slaa:hover p {
+  color: var(--main-color)
+}
+
+
+@keyframes up-down{
+  0%, 100% {
+    top: 0
+  }
+  50% {
+    top: -20px
+  }
+}
